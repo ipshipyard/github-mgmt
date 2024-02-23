@@ -1,0 +1,132 @@
+name: Sync
+
+on:
+  schedule:
+    - cron: 0 0 * * 0
+  workflow_dispatch:
+    inputs:
+      workspaces:
+        description: Space separated list of workspaces to sync (leave blank to sync all)
+        required: false
+      lock:
+        description: Whether to acquire terraform state lock during sync
+        required: false
+        default: "true"
+
+jobs:
+  prepare:
+    name: Prepare
+    runs-on: ubuntu-latest
+    outputs:
+      workspaces: ${{ steps.workspaces.outputs.this }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Discover workspaces
+        id: workspaces
+        env:
+          WORKSPACES: ${{ github.event.inputs.workspaces }}
+        run: |
+          if [[ -z "${WORKSPACES}" ]]; then
+            workspaces="$(ls github | jq --raw-input '[.[0:-4]]' | jq -sc add)"
+          else
+            workspaces="$(echo "${WORKSPACES}" | jq --raw-input 'split(" ")')"
+          fi
+          echo "this=${workspaces}" >> $GITHUB_OUTPUT
+  sync:
+    needs: [prepare]
+    if: needs.prepare.outputs.workspaces != ''
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        workspace: ${{ fromJson(needs.prepare.outputs.workspaces) }}
+    name: Sync
+    runs-on: ubuntu-latest
+    env:
+      TF_IN_AUTOMATION: 1
+      TF_INPUT: 0
+      TF_LOCK: ${{ github.event.inputs.lock }}
+      TF_WORKSPACE_OPT: ${{ matrix.workspace }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.RW_AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.RW_AWS_SECRET_ACCESS_KEY }}
+      GITHUB_APP_ID: ${{ secrets.RW_GITHUB_APP_ID }}
+      GITHUB_APP_INSTALLATION_ID: ${{ secrets[format('RW_GITHUB_APP_INSTALLATION_ID_{0}', matrix.workspace)] || secrets.RW_GITHUB_APP_INSTALLATION_ID }}
+      GITHUB_APP_PEM_FILE: ${{ secrets.RW_GITHUB_APP_PEM_FILE }}
+      TF_VAR_write_delay_ms: 300
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup terraform
+        uses: hashicorp/setup-terraform@633666f66e0061ca3b725c73b2ec20cd13a8fdd1 # v2.0.3
+        with:
+          terraform_version: 1.2.9
+          terraform_wrapper: false
+      - name: Initialize terraform
+        run: terraform init -upgrade
+        working-directory: terraform
+      - name: Select terraform workspace
+        run: |
+          terraform workspace select "${TF_WORKSPACE_OPT}" || terraform workspace new "${TF_WORKSPACE_OPT}"
+          echo "TF_WORKSPACE=${TF_WORKSPACE_OPT}" >> $GITHUB_ENV
+        working-directory: terraform
+      - name: Pull terraform state
+        run: |
+          terraform show -json > $TF_WORKSPACE.tfstate.json
+        working-directory: terraform
+      - name: Sync
+        run: |
+          npm ci
+          npm run build
+          npm run main
+        working-directory: scripts
+      - uses: ./.github/actions/git-config-user
+      - env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git_branch="${GITHUB_REF_NAME}-sync-${TF_WORKSPACE}"
+          git checkout -B "${git_branch}"
+          git add --all
+          git diff-index --quiet HEAD || git commit --message="sync@${GITHUB_RUN_ID} ${TF_WORKSPACE}"
+          git push origin "${git_branch}" --force
+  push:
+    needs: [prepare, sync]
+    if: needs.prepare.outputs.workspaces != ''
+    name: Push
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Generate app token
+        id: token
+        uses: tibdex/github-app-token@b62528385c34dbc9f38e5f4225ac829252d1ea92 # v1.8.0
+        with:
+          app_id: ${{ secrets.RW_GITHUB_APP_ID }}
+          installation_id: ${{ secrets[format('RW_GITHUB_APP_INSTALLATION_ID_{0}', github.repository_owner)] || secrets.RW_GITHUB_APP_INSTALLATION_ID }}
+          private_key: ${{ secrets.RW_GITHUB_APP_PEM_FILE }}
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ steps.token.outputs.token }}
+      - uses: ./.github/actions/git-config-user
+      - env:
+          WORKSPACES: ${{ needs.prepare.outputs.workspaces }}
+        run: |
+          echo "${GITHUB_RUN_ID}" > .sync
+          git add .sync
+          git commit --message="sync@${GITHUB_RUN_ID}"
+          while read workspace; do
+            workspace_branch="${GITHUB_REF_NAME}-sync-${workspace}"
+            git fetch origin "${workspace_branch}"
+            git merge --strategy-option=theirs "origin/${workspace_branch}"
+            git push origin --delete "${workspace_branch}"
+          done <<< "$(jq -r '.[]' <<< "${WORKSPACES}")"
+      - run: git push origin "${GITHUB_REF_NAME}" --force

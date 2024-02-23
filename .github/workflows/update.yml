@@ -1,0 +1,32 @@
+name: Update
+
+on:
+  workflow_run:
+    workflows:
+      - "Apply"
+    types:
+      - completed
+  workflow_dispatch:
+
+jobs:
+  update:
+    if: (github.event_name == 'workflow_dispatch' &&
+        github.ref_name == github.event.repository.default_branch) ||
+        (github.event_name == 'workflow_run' &&
+        github.event.workflow_run.conclusion == 'success')
+    name: Update
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm ci && npm run build
+        working-directory: scripts
+      - name: Update PRs
+        env:
+          GITHUB_APP_ID: ${{ secrets.RW_GITHUB_APP_ID }}
+          GITHUB_APP_INSTALLATION_ID: ${{ secrets[format('RW_GITHUB_APP_INSTALLATION_ID_{0}', matrix.workspace)] || secrets.RW_GITHUB_APP_INSTALLATION_ID }}
+          GITHUB_APP_PEM_FILE: ${{ secrets.RW_GITHUB_APP_PEM_FILE }}
+        run: node lib/actions/update-pull-requests.js
+        working-directory: scripts

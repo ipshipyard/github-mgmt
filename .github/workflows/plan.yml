@@ -1,0 +1,168 @@
+name: Plan
+
+on:
+  pull_request_target:
+    branches: [master] # no need to create plans on other PRs because they can be only used after a merge to the default branch
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+
+concurrency:
+  group: plan-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true # we only care about the most recent plan for any given PR/ref
+
+jobs:
+  prepare:
+    permissions:
+      actions: read
+      contents: read
+      pull-requests: read
+    name: Prepare
+    runs-on: ubuntu-latest
+    outputs:
+      workspaces: ${{ steps.workspaces.outputs.this }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - if: github.event_name == 'pull_request_target'
+        env:
+          NUMBER: ${{ github.event.pull_request.number }}
+          SHA: ${{ github.event.pull_request.head.sha }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git fetch origin "pull/${NUMBER}/head"
+          # we delete github directory first to ensure we only get YAMLs from the PR
+          rm -rf github && git checkout "${SHA}" -- github
+      - name: Discover workspaces
+        id: workspaces
+        run: echo "this=$(ls github | jq --raw-input '[.[0:-4]]' | jq -sc add)" >> $GITHUB_OUTPUT
+      - name: Wait for Apply to finish
+        run: |
+          while [[ "$(gh api /repos/${{ github.repository }}/actions/workflows/apply.yml/runs --jq '.workflow_runs | map(.status) | map(select(. != "completed")) | length')" != '0' ]]; do
+            echo "Waiting for all Apply workflow runs to finish..."
+            sleep 10
+          done
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        timeout-minutes: 10
+  plan:
+    needs: [prepare]
+    permissions:
+      contents: read
+      pull-requests: read
+    strategy:
+      fail-fast: false
+      matrix:
+        workspace: ${{ fromJson(needs.prepare.outputs.workspaces || '[]') }}
+    name: Plan
+    runs-on: ubuntu-latest
+    env:
+      TF_IN_AUTOMATION: 1
+      TF_INPUT: 0
+      TF_WORKSPACE: ${{ matrix.workspace }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.RO_AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.RO_AWS_SECRET_ACCESS_KEY }}
+      GITHUB_APP_ID: ${{ secrets.RO_GITHUB_APP_ID }}
+      GITHUB_APP_INSTALLATION_ID: ${{ secrets[format('RO_GITHUB_APP_INSTALLATION_ID_{0}', matrix.workspace)] || secrets.RO_GITHUB_APP_INSTALLATION_ID }}
+      GITHUB_APP_PEM_FILE: ${{ secrets.RO_GITHUB_APP_PEM_FILE }}
+      TF_VAR_write_delay_ms: 300
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - if: github.event_name == 'pull_request_target'
+        env:
+          NUMBER: ${{ github.event.pull_request.number }}
+          SHA: ${{ github.event.pull_request.head.sha }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git fetch origin "pull/${NUMBER}/head"
+          rm -rf github && git checkout "${SHA}" -- github
+      - name: Setup terraform
+        uses: hashicorp/setup-terraform@633666f66e0061ca3b725c73b2ec20cd13a8fdd1 # v2.0.3
+        with:
+          terraform_version: 1.2.9
+          terraform_wrapper: false
+      - name: Initialize terraform
+        run: terraform init
+        working-directory: terraform
+      - name: Plan terraform
+        run: |
+          terraform show -json > $TF_WORKSPACE.tfstate.json
+          terraform plan -refresh=false -lock=false -out="${TF_WORKSPACE}.tfplan" -no-color
+        working-directory: terraform
+      - name: Upload terraform plan
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.TF_WORKSPACE }}_${{ github.event.pull_request.head.sha || github.sha }}.tfplan
+          path: terraform/${{ env.TF_WORKSPACE }}.tfplan
+          if-no-files-found: error
+          retention-days: 90
+  comment:
+    needs: [prepare, plan]
+    if: github.event_name == 'pull_request_target'
+    permissions:
+      contents: read
+      pull-requests: write
+    name: Comment
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.RO_AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.RO_AWS_SECRET_ACCESS_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - if: github.event_name == 'pull_request_target'
+        env:
+          NUMBER: ${{ github.event.pull_request.number }}
+          SHA: ${{ github.event.pull_request.head.sha }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git fetch origin "pull/${NUMBER}/head"
+          rm -rf github && git checkout "${SHA}" -- github
+      - name: Setup terraform
+        uses: hashicorp/setup-terraform@633666f66e0061ca3b725c73b2ec20cd13a8fdd1 # v2.0.3
+        with:
+          terraform_version: 1.2.9
+          terraform_wrapper: false
+      - name: Initialize terraform
+        run: terraform init
+        working-directory: terraform
+      - name: Download terraform plans
+        uses: actions/download-artifact@v3
+        with:
+          path: terraform
+      - name: Show terraform plans
+        run: |
+          for plan in $(find . -type f -name '*.tfplan'); do
+            echo "<details><summary>$(basename "${plan}" '.tfplan')</summary>" >> TERRAFORM_PLANS.md
+            echo '' >> TERRAFORM_PLANS.md
+            echo '```' >> TERRAFORM_PLANS.md
+            echo "$(terraform show -no-color "${plan}" 2>&1)" >> TERRAFORM_PLANS.md
+            echo '```' >> TERRAFORM_PLANS.md
+            echo '' >> TERRAFORM_PLANS.md
+            echo '</details>' >> TERRAFORM_PLANS.md
+          done
+          cat TERRAFORM_PLANS.md
+        working-directory: terraform
+      - name: Prepare comment
+        run: |
+          echo 'COMMENT<<EOF' >> $GITHUB_ENV
+          if [[ $(wc -c TERRAFORM_PLANS.md | cut -d' ' -f1) -ge 65000 ]]; then
+            echo "Terraform plans are too long to post as a comment. Please inspect [Plan > Comment > Show terraform plans](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}) instead." >> $GITHUB_ENV
+          else
+            cat TERRAFORM_PLANS.md >> $GITHUB_ENV
+          fi
+          echo 'EOF' >> $GITHUB_ENV
+        working-directory: terraform
+      - name: Comment on pull request
+        uses: marocchino/sticky-pull-request-comment@fcf6fe9e4a0409cd9316a5011435be0f3327f1e1 # v2.3.1
+        with:
+          header: plan
+          number: ${{ github.event.pull_request.number }}
+          message: |
+            Before merge, verify that all the following plans are correct. They will be applied as-is after the merge.
+
+            #### Terraform plans
+            ${{ env.COMMENT }}

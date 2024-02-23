@@ -1,0 +1,84 @@
+name: Apply
+
+on:
+  push:
+    branches:
+      - master # we want this to be executed on the default branch only
+  workflow_dispatch:
+
+jobs:
+  prepare:
+    if: github.event.repository.is_template == false
+    permissions:
+      contents: read
+      issues: read
+      pull-requests: read
+    name: Prepare
+    runs-on: ubuntu-latest
+    outputs:
+      workspaces: ${{ steps.workspaces.outputs.this }}
+      sha: ${{ steps.sha.outputs.result }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Discover workspaces
+        id: workspaces
+        run: echo "this=$(ls github | jq --raw-input '[.[0:-4]]' | jq -sc add)" >> $GITHUB_OUTPUT
+      - run: npm ci && npm run build
+        working-directory: scripts
+      - name: Find sha for plan
+        id: sha
+        env:
+          GITHUB_APP_ID: ${{ secrets.RW_GITHUB_APP_ID }}
+          GITHUB_APP_INSTALLATION_ID: ${{ secrets[format('RW_GITHUB_APP_INSTALLATION_ID_{0}', matrix.workspace)] || secrets.RW_GITHUB_APP_INSTALLATION_ID }}
+          GITHUB_APP_PEM_FILE: ${{ secrets.RW_GITHUB_APP_PEM_FILE }}
+        run: node lib/actions/find-sha-for-plan.js
+        working-directory: scripts
+  apply:
+    needs: [prepare]
+    if: needs.prepare.outputs.sha != '' && needs.prepare.outputs.workspaces != ''
+    permissions:
+      actions: read
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        workspace: ${{ fromJson(needs.prepare.outputs.workspaces) }}
+    name: Apply
+    runs-on: ubuntu-latest
+    env:
+      TF_IN_AUTOMATION: 1
+      TF_INPUT: 0
+      TF_WORKSPACE: ${{ matrix.workspace }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.RW_AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.RW_AWS_SECRET_ACCESS_KEY }}
+      GITHUB_APP_ID: ${{ secrets.RW_GITHUB_APP_ID }}
+      GITHUB_APP_INSTALLATION_ID: ${{ secrets[format('RW_GITHUB_APP_INSTALLATION_ID_{0}', matrix.workspace)] || secrets.RW_GITHUB_APP_INSTALLATION_ID }}
+      GITHUB_APP_PEM_FILE: ${{ secrets.RW_GITHUB_APP_PEM_FILE }}
+      TF_VAR_write_delay_ms: 300
+    defaults:
+      run:
+        shell: bash
+        working-directory: terraform
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup terraform
+        uses: hashicorp/setup-terraform@633666f66e0061ca3b725c73b2ec20cd13a8fdd1 # v2.0.3
+        with:
+          terraform_version: 1.2.9
+          terraform_wrapper: false
+      - name: Initialize terraform
+        run: terraform init
+      - name: Terraform Plan Download
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SHA: ${{ needs.prepare.outputs.sha }}
+        run: gh run download -n "${TF_WORKSPACE}_${SHA}.tfplan" --repo "${GITHUB_REPOSITORY}"
+      - name: Terraform Apply
+        run: |
+          terraform show -json > $TF_WORKSPACE.tfstate.json
+          terraform apply -lock-timeout=0s -no-color "${TF_WORKSPACE}.tfplan"
