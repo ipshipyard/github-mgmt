@@ -1,3 +1,58 @@
 # yaml-language-server: $schema=.schema.json
 
-{}
+repositories:
+  .github:
+    advanced_security: false
+    allow_update_branch: false
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+  archived-waterworks-infra:
+    advanced_security: false
+    allow_update_branch: false
+    has_discussions: false
+    secret_scanning_push_protection: false
+    secret_scanning: false
+  github-mgmt:
+    advanced_security: false
+    allow_update_branch: false
+    branch_protection:
+      master:
+        blocks_creations: false
+        lock_branch: false
+        required_pull_request_reviews:
+          dismiss_stale_reviews: false
+          require_code_owner_reviews: false
+          required_approving_review_count: 1
+          restrict_dismissals: false
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+  waterworks-community:
+    advanced_security: false
+    allow_update_branch: false
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+  waterworks-infra:
+    advanced_security: false
+    allow_update_branch: false
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
