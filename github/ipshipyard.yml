@@ -14,9 +14,16 @@ repositories:
   archived-waterworks-infra:
     advanced_security: false
     allow_update_branch: false
+    archived: true
+    collaborators:
+      admin:
+        - hacdias
+        - ns4plabs
+    default_branch: master
     has_discussions: false
     secret_scanning_push_protection: false
     secret_scanning: false
+    visibility: private
   github-mgmt:
     advanced_security: false
     allow_update_branch: false
