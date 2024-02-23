@@ -79,7 +79,7 @@ jobs:
         working-directory: terraform
       - name: Pull terraform state
         run: |
-          terraform show -json > $TF_WORKSPACE.tfstate.json
+          echo '{value: {root_module: {resources: []}}' > $TF_WORKSPACE.tfstate.json
         working-directory: terraform
       - name: Sync
         run: |
