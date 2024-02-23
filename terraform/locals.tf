@@ -136,7 +136,7 @@ locals {
         }
       }
     }
-    "state" = {
+    "state" = try({
       for mode, item in {
         for item in local.state.values.root_module.resources : item.mode => item...
         } : mode => {
@@ -152,6 +152,6 @@ locals {
           }
         }
       }
-    }.managed
+    }.managed, {})
   }
 }
