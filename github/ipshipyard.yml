@@ -74,9 +74,10 @@ repositories:
       admin:
         - hacdias
         - ns4plabs
-      maintain:
+      push:
         - SgtPooki
       triage:
+        - 2color
         - achingbrain
         - dennis-tra
     default_branch: master
