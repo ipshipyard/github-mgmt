@@ -27,6 +27,23 @@ repositories:
     visibility: public
   archived-waterworks-infra:
     archived: true
+  cf-gateway-stats:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    collaborators:
+      admin:
+        - ns4plabs
+    default_branch: master
+    description: Cloudflare Worker for collecting IPFS gateway stats
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: private
   github-mgmt:
     advanced_security: false
     allow_update_branch: false
