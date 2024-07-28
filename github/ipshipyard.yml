@@ -89,12 +89,11 @@ repositories:
     archived: false
     collaborators:
       admin:
-        - hacdias
         - ns4plabs
       push:
+        - 2color
         - SgtPooki
       triage:
-        - 2color
         - achingbrain
         - dennis-tra
     default_branch: master
