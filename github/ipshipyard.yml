@@ -13,7 +13,6 @@ members:
     - ns4plabs
     - SgtPooki
     - sukunrt
-    - yiannisbot
 repositories:
   .github:
     advanced_security: false
@@ -89,8 +88,8 @@ repositories:
         - 2color
         - ns4plabs
     default_branch: main
-    description: Discussion and documentation concerning the operation of the IPFS
-      HTTP Gateway at https://ipfs.io/ipfs.
+    description: Discussion and documentation concerning the operation of the Public
+      Goods for IPFS and Libp2p.
     has_discussions: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
@@ -108,6 +107,7 @@ repositories:
         - ns4plabs
       push:
         - 2color
+        - ipshipyard-deploy
         - SgtPooki
       triage:
         - achingbrain
