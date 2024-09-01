@@ -9,10 +9,12 @@ members:
   member:
     - 2color
     - achingbrain
+    - gammazero
     - MarcoPolo
     - ns4plabs
     - SgtPooki
     - sukunrt
+    - yiannisbot
 repositories:
   .github:
     advanced_security: false
@@ -105,9 +107,11 @@ repositories:
     collaborators:
       admin:
         - ns4plabs
+      pull:
+        - ipshipyard-deploy
       push:
         - 2color
-        - ipshipyard-deploy
+        - gammazero
         - SgtPooki
       triage:
         - achingbrain
