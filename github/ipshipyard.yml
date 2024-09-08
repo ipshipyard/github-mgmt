@@ -14,7 +14,6 @@ members:
     - ns4plabs
     - SgtPooki
     - sukunrt
-    - yiannisbot
 repositories:
   .github:
     advanced_security: false
@@ -78,6 +77,9 @@ repositories:
     secret_scanning: false
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    teams:
+      push:
+        - engineering
     visibility: private
   waterworks-community:
     advanced_security: false
@@ -102,7 +104,7 @@ repositories:
     visibility: public
   waterworks-infra:
     advanced_security: false
-    allow_update_branch: false
+    allow_update_branch: true
     archived: false
     collaborators:
       admin:
@@ -127,3 +129,19 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: private
+teams:
+  engineering:
+    members:
+      maintainer:
+        - aschmahmann
+        - cewood
+        - lidel
+      member:
+        - 2color
+        - achingbrain
+        - gammazero
+        - MarcoPolo
+        - ns4plabs
+        - SgtPooki
+        - sukunrt
+    privacy: closed
