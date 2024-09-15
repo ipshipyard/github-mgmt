@@ -80,7 +80,7 @@ repositories:
     teams:
       push:
         - engineering
-    visibility: private
+    visibility: public
   waterworks-community:
     advanced_security: false
     allow_update_branch: false
