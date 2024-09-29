@@ -113,10 +113,10 @@ repositories:
         - ipshipyard-deploy
       push:
         - 2color
+        - achingbrain
         - gammazero
         - SgtPooki
       triage:
-        - achingbrain
         - dennis-tra
     default_branch: master
     description: IPFS Infra As A Service - The central place for gateway and
