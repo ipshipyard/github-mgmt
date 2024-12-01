@@ -99,6 +99,13 @@ repositories:
     teams:
       push:
         - engineering
+    topics:
+      - autotls
+      - dns-01-acme-challenge
+      - libp2p-transport
+      - libp2p
+      - tls
+      - wss
     visibility: public
   waterworks-community:
     advanced_security: false
