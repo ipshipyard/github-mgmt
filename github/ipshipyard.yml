@@ -15,6 +15,7 @@ members:
     - ns4plabs
     - SgtPooki
     - sukunrt
+    - web3-bot
 repositories:
   .github:
     advanced_security: false
@@ -87,6 +88,9 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     description: An Authoritative DNS server for distributing DNS subdomains to libp2p peers
     has_discussions: false
