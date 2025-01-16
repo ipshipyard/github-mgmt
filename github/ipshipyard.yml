@@ -10,6 +10,7 @@ members:
     - 2color
     - achingbrain
     - gammazero
+    - guillaumemichel
     - hsanjuan
     - MarcoPolo
     - ns4plabs
@@ -145,6 +146,7 @@ repositories:
         - 2color
         - achingbrain
         - gammazero
+        - guillaumemichel
         - hsanjuan
         - SgtPooki
       triage:
@@ -171,6 +173,7 @@ teams:
         - 2color
         - achingbrain
         - gammazero
+        - guillaumemichel
         - hsanjuan
         - MarcoPolo
         - ns4plabs
