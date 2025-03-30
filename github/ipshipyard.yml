@@ -106,6 +106,23 @@ repositories:
       - ipfs
       - ipns
     visibility: public
+  ipshipyard.com:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    collaborators:
+      maintain:
+        - cwaring
+    default_branch: main
+    description: Interplanetary Shipyard Website
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: private
   js-libp2p-auto-tls:
     advanced_security: false
     allow_update_branch: true
@@ -123,6 +140,24 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: public
+  js-libp2p-dev-server:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    collaborators:
+      admin:
+        - SgtPooki
+    default_branch: main
+    description: Dev server that utilizes js-libp2p in order to automatically host
+      your application locally and publicly, without any centralized services
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: private
   js-libp2p-http:
     advanced_security: false
     allow_update_branch: false
@@ -184,6 +219,20 @@ repositories:
       - tls
       - wss
     visibility: public
+  roadmaps:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    default_branch: main
+    description: A place for high level roadmaps and issues for Shipyard
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: private
   waterworks-community:
     advanced_security: false
     allow_update_branch: false
