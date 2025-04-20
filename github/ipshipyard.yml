@@ -92,8 +92,7 @@ repositories:
       admin:
         - SgtPooki
     default_branch: main
-    description: A monorepo of React providers, hooks, and components for Helia and
-      js-libp2p
+    description: A monorepo of React providers, hooks, and components for Helia and js-libp2p
     has_discussions: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
@@ -110,9 +109,7 @@ repositories:
       admin:
         - 2color
     default_branch: main
-    description: Official IPFS GitHub Action for deploying static sites (or builds)
-      to IPFS nodes/pinning services with CAR files, and addressing site builds
-      with CIDs
+    description: Official IPFS GitHub Action for deploying static sites (or builds) to IPFS nodes/pinning services with CAR files, and addressing site builds with CIDs
     has_discussions: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
@@ -196,8 +193,7 @@ repositories:
       admin:
         - SgtPooki
     default_branch: main
-    description: Dev server that utilizes js-libp2p in order to automatically host
-      your application locally and publicly, without any centralized services
+    description: Dev server that utilizes js-libp2p in order to automatically host your application locally and publicly, without any centralized services
     has_discussions: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
@@ -292,8 +288,7 @@ repositories:
         - 2color
         - ns4plabs
     default_branch: main
-    description: Discussion and documentation concerning the operation of the Public
-      Goods for IPFS and Libp2p.
+    description: Discussion and documentation concerning the operation of the Public Goods for IPFS and Libp2p.
     has_discussions: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
@@ -321,8 +316,7 @@ repositories:
       triage:
         - dennis-tra
     default_branch: master
-    description: IPFS Infra As A Service - The central place for gateway and
-      bootstrapper automations.
+    description: IPFS Infra As A Service - The central place for gateway and bootstrapper automations.
     has_discussions: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
