@@ -1,1 +1,349 @@
-{}
+members:
+  admin:
+    - aschmahmann
+    - cewood
+    - galargh
+    - lidel
+  member:
+    - 2color
+    - achingbrain
+    - gammazero
+    - guillaumemichel
+    - hsanjuan
+    - ns4plabs
+    - p-shahi
+    - SgtPooki
+    - sukunrt
+    - web3-bot
+repositories:
+  .github:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    default_branch: main
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: public
+  archived-waterworks-infra:
+    archived: true
+  cf-gateway-stats:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    collaborators:
+      admin:
+        - ns4plabs
+    default_branch: master
+    description: Cloudflare Worker for collecting IPFS gateway stats
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: private
+  dnslink-action:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    collaborators:
+      admin:
+        - 2color
+    default_branch: main
+    description: "GitHub Action to automate setting DNSLink record "
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: public
+  github-mgmt:
+    advanced_security: false
+    allow_update_branch: true
+    archived: false
+    branch_protection:
+      master:
+        blocks_creations: false
+        lock_branch: false
+    default_branch: master
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: public
+  helia-react-components:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    collaborators:
+      admin:
+        - SgtPooki
+    default_branch: main
+    description: A monorepo of React providers, hooks, and components for Helia and
+      js-libp2p
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: public
+  ipfs-deploy-action:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    collaborators:
+      admin:
+        - 2color
+    default_branch: main
+    description: Official IPFS GitHub Action for deploying static sites (or builds)
+      to IPFS nodes/pinning services with CAR files, and addressing site builds
+      with CIDs
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    topics:
+      - actions
+      - car-file
+      - cid
+      - deploy
+      - github
+      - ipfs-cluster
+      - ipfs
+      - kubo
+      - pinata
+      - storacha
+      - upload
+    visibility: public
+  ipns-inspector:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    collaborators:
+      admin:
+        - 2color
+    default_branch: main
+    description: inspect and create IPNS records from the browser
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    topics:
+      - debug
+      - ipfs
+      - ipns
+    visibility: public
+  ipshipyard.com:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    collaborators:
+      maintain:
+        - cwaring
+    default_branch: main
+    description: Interplanetary Shipyard Website
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: private
+  js-libp2p-auto-tls:
+    advanced_security: false
+    allow_update_branch: true
+    archived: false
+    collaborators:
+      admin:
+        - achingbrain
+    default_branch: main
+    description: Automatically acquire a <peerId>.libp2p.direct TLS certificate
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: public
+  js-libp2p-dev-server:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    collaborators:
+      admin:
+        - SgtPooki
+    default_branch: main
+    description: Dev server that utilizes js-libp2p in order to automatically host
+      your application locally and publicly, without any centralized services
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: private
+  js-libp2p-http:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    collaborators:
+      admin:
+        - achingbrain
+    default_branch: main
+    description: HTTP on top of libp2p
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: public
+  js-node-datachannel:
+    advanced_security: false
+    allow_update_branch: true
+    archived: false
+    collaborators:
+      admin:
+        - achingbrain
+    default_branch: master
+    description: A fork of node-datachannel with WebRTC-Direct patches applied
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: public
+  p2p-forge:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    collaborators:
+      push:
+        - web3-bot
+    default_branch: main
+    description: An Authoritative DNS server for distributing DNS subdomains to libp2p peers
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    teams:
+      push:
+        - engineering
+    topics:
+      - autotls
+      - dns-01-acme-challenge
+      - libp2p-transport
+      - libp2p
+      - tls
+      - wss
+    visibility: public
+  roadmaps:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    default_branch: main
+    description: A place for high level roadmaps and issues for Shipyard
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: private
+  waterworks-community:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    collaborators:
+      admin:
+        - cewood
+      push:
+        - 2color
+        - ns4plabs
+    default_branch: main
+    description: Discussion and documentation concerning the operation of the Public
+      Goods for IPFS and Libp2p.
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: public
+  waterworks-infra:
+    advanced_security: false
+    allow_update_branch: true
+    archived: false
+    collaborators:
+      admin:
+        - ns4plabs
+      pull:
+        - ipshipyard-deploy
+      push:
+        - 2color
+        - achingbrain
+        - gammazero
+        - guillaumemichel
+        - hsanjuan
+        - SgtPooki
+      triage:
+        - dennis-tra
+    default_branch: master
+    description: IPFS Infra As A Service - The central place for gateway and
+      bootstrapper automations.
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: private
+teams:
+  engineering:
+    members:
+      maintainer:
+        - aschmahmann
+        - cewood
+        - lidel
+      member:
+        - 2color
+        - achingbrain
+        - gammazero
+        - guillaumemichel
+        - hsanjuan
+        - ns4plabs
+        - p-shahi
+        - SgtPooki
+        - sukunrt
+    privacy: closed
