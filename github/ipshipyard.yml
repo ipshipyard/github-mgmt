@@ -305,7 +305,7 @@ repositories:
     secret_scanning: false
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
-    visibility: private
+    visibility: public
   waterworks-community:
     advanced_security: false
     allow_update_branch: false
