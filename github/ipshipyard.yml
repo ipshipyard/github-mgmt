@@ -81,13 +81,15 @@ repositories:
     collaborators:
       admin:
         - 2color
+      push:
+        - web3-bot
     default_branch: main
     description: Example showing drop-in service worker to replace centralized gateways with verified fetch
     has_discussions: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
-    secret_scanning_push_protection: false
-    secret_scanning: false
+    secret_scanning_push_protection: true
+    secret_scanning: true
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: public
