@@ -269,6 +269,8 @@ repositories:
     collaborators:
       admin:
         - achingbrain
+      push:
+        - web3-bot
     default_branch: main
     description: Inspect a running libp2p node
     has_discussions: false
