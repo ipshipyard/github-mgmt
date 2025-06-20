@@ -290,6 +290,9 @@ repositories:
         - achingbrain
       push:
         - web3-bot
+    teams:
+      push:
+        - engineering
     default_branch: main
     description: Inspect a running libp2p node
     has_discussions: false
