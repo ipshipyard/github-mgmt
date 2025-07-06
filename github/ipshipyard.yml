@@ -362,6 +362,9 @@ repositories:
     secret_scanning: true
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    teams:
+      maintain:
+        - engineering
     visibility: public
   waterworks-community:
     advanced_security: false
