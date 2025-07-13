@@ -366,6 +366,23 @@ repositories:
       maintain:
         - engineering
     visibility: public
+  telemetry-server:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    collaborators:
+      admin:
+        - hsanjuan
+    default_branch: main
+    description: Telemetry server receives and logs telemetry from Kubo
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: private
   waterworks-community:
     advanced_security: false
     allow_update_branch: false
@@ -404,8 +421,6 @@ repositories:
         - hsanjuan
         - SgtPooki
         - web3-bot
-      triage:
-        - dennis-tra
     default_branch: master
     description: IPFS Infra As A Service - The central place for gateway and bootstrapper automations.
     has_discussions: false
