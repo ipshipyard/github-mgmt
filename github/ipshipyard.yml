@@ -59,13 +59,16 @@ repositories:
     advanced_security: false
     allow_update_branch: true
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     description: AutoConfig for IPFS Mainnet maintained by the Shipyard
     has_discussions: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
-    secret_scanning_push_protection: false
-    secret_scanning: false
+    secret_scanning_push_protection: true
+    secret_scanning: true
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: public
@@ -153,13 +156,15 @@ repositories:
     collaborators:
       admin:
         - 2color
+      push:
+        - web3-bot
     default_branch: main
     description: "Learn the building blocks of IPFS with Helia: CIDs, UnixFS, CAR files and content routing."
     has_discussions: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
-    secret_scanning_push_protection: false
-    secret_scanning: false
+    secret_scanning_push_protection: true
+    secret_scanning: true
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: public
@@ -220,6 +225,8 @@ repositories:
     collaborators:
       admin:
         - 2color
+      push:
+        - web3-bot
     default_branch: main
     description: IPFS app launcher browser extension with local pet names, version management, and smart CID discovery
     has_discussions: false
