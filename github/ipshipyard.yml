@@ -55,6 +55,20 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: private
+  config.ipfs-mainnet.org:
+    advanced_security: false
+    allow_update_branch: true
+    archived: false
+    default_branch: main
+    description: AutoConfig for IPFS Mainnet maintained by the Shipyard
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: public
   deno_helia:
     advanced_security: false
     allow_update_branch: false
@@ -132,6 +146,23 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: public
+  helia-adventure:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    collaborators:
+      admin:
+        - 2color
+    default_branch: main
+    description: "Learn the building blocks of IPFS with Helia: CIDs, UnixFS, CAR files and content routing."
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: public
   helia-react-components:
     advanced_security: false
     allow_update_branch: false
@@ -182,6 +213,26 @@ repositories:
       - storacha
       - upload
     visibility: public
+  ipfs-quicklaunch:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    collaborators:
+      admin:
+        - 2color
+    default_branch: main
+    description: IPFS app launcher browser extension with local pet names, version management, and smart CID discovery
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    teams:
+      push:
+        - engineering
+    visibility: private
   ipns-inspector:
     advanced_security: false
     allow_update_branch: false
