@@ -239,7 +239,7 @@ repositories:
     teams:
       push:
         - engineering
-    visibility: private
+    visibility: public
   ipns-inspector:
     advanced_security: false
     allow_update_branch: false
