@@ -130,7 +130,7 @@ repositories:
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     teams:
       push:
-        - engineering    
+        - engineering
     visibility: public
   drop-in-service-worker:
     advanced_security: false
