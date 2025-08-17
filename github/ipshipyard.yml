@@ -74,7 +74,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: private
-  config.ipfs-mainnet.org:
+  conf.ipfs-mainnet.org:
     advanced_security: false
     allow_update_branch: true
     archived: false
