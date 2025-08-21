@@ -459,6 +459,7 @@ repositories:
         - hsanjuan
       push:
         - web3-bot
+        - ns4plabs
     default_branch: main
     description: Telemetry server receives and logs telemetry from Kubo
     has_discussions: false
