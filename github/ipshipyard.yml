@@ -41,6 +41,8 @@ repositories:
     collaborators:
       admin:
         - guillaumemichel
+      push:
+        - web3-bot
     default_branch: main
     description: Benchmarking tool to measure providing performance for the Amino DHT
     has_discussions: false
