@@ -435,6 +435,9 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     description: A place for private roadmap items and issues for Shipyard
     has_discussions: false
