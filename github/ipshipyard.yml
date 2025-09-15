@@ -505,8 +505,11 @@ repositories:
     allow_update_branch: true
     archived: false
     collaborators:
+      admin:
+        - achingbrain
       push:
         - web3-bot
+        - engineering
     default_branch: main
     description: The code behind the helia.io website
     has_discussions: false
