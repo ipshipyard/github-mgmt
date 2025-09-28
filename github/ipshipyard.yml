@@ -510,7 +510,6 @@ repositories:
       admin:
         - achingbrain
       push:
-        - engineering
         - web3-bot
     default_branch: main
     description: The code behind the helia.io website
