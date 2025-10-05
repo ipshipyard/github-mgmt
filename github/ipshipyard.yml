@@ -7,15 +7,11 @@ members:
     - galargh
     - lidel
   member:
-    - 2color
     - achingbrain
     - gammazero
     - guillaumemichel
     - hsanjuan
     - ns4plabs
-    - p-shahi
-    - SgtPooki
-    - sukunrt
     - web3-bot
 repositories:
   .github:
@@ -96,8 +92,6 @@ repositories:
     allow_update_branch: false
     archived: false
     collaborators:
-      admin:
-        - 2color
       push:
         - web3-bot
     default_branch: main
@@ -115,8 +109,6 @@ repositories:
     allow_update_branch: false
     archived: false
     collaborators:
-      admin:
-        - 2color
       push:
         - web3-bot
     default_branch: main
@@ -137,8 +129,6 @@ repositories:
     allow_update_branch: false
     archived: false
     collaborators:
-      admin:
-        - 2color
       push:
         - web3-bot
     default_branch: main
@@ -195,8 +185,6 @@ repositories:
     allow_update_branch: false
     archived: false
     collaborators:
-      admin:
-        - 2color
       push:
         - web3-bot
     default_branch: main
@@ -214,8 +202,6 @@ repositories:
     allow_update_branch: false
     archived: false
     collaborators:
-      admin:
-        - SgtPooki
       push:
         - web3-bot
     default_branch: main
@@ -236,7 +222,6 @@ repositories:
       pull:
         - cwaring
       push:
-        - 2color
         - guillaumemichel
         - web3-bot
     default_branch: main
@@ -273,8 +258,6 @@ repositories:
     allow_update_branch: false
     archived: false
     collaborators:
-      admin:
-        - SgtPooki
       push:
         - web3-bot
     default_branch: main
@@ -312,7 +295,6 @@ repositories:
     archived: false
     collaborators:
       admin:
-        - 2color
         - achingbrain
       push:
         - web3-bot
@@ -437,7 +419,6 @@ repositories:
       admin:
         - cewood
       push:
-        - 2color
         - ns4plabs
         - web3-bot
     default_branch: main
@@ -460,12 +441,10 @@ repositories:
       pull:
         - ipshipyard-deploy
       push:
-        - 2color
         - achingbrain
         - gammazero
         - guillaumemichel
         - hsanjuan
-        - SgtPooki
         - web3-bot
     default_branch: master
     description: IPFS Infra As A Service - The central place for gateway and bootstrapper automations.
@@ -483,7 +462,6 @@ repositories:
     archived: false
     collaborators:
       admin:
-        - 2color
         - achingbrain
       push:
         - web3-bot
@@ -530,13 +508,9 @@ teams:
         - cewood
         - lidel
       member:
-        - 2color
         - achingbrain
         - gammazero
         - guillaumemichel
         - hsanjuan
         - ns4plabs
-        - p-shahi
-        - SgtPooki
-        - sukunrt
     privacy: closed
