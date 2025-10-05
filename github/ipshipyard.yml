@@ -222,6 +222,7 @@ repositories:
       pull:
         - cwaring
       push:
+        - guillaumemichel
         - web3-bot
     default_branch: main
     description: Interplanetary Shipyard Website
