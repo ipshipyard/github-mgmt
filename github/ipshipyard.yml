@@ -77,6 +77,8 @@ repositories:
     collaborators:
       admin:
         - hsanjuan
+      push:
+        - web3-bot
     default_branch: master
     has_discussions: false
     merge_commit_message: PR_TITLE
