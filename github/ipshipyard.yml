@@ -124,6 +124,20 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: public
+  demo-repository:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    default_branch: main
+    description: A code repository designed to show the best GitHub has to offer.
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: private
   deno_helia:
     advanced_security: false
     allow_update_branch: false
@@ -250,6 +264,82 @@ repositories:
     secret_scanning: true
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: public
+  ipfs-deploy-action:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    collaborators:
+      push:
+        - web3-bot
+    default_branch: main
+    description: Official IPFS GitHub Action for deploying static sites (or builds) to IPFS nodes/pinning services with CAR files, and addressing site builds with CIDs
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    teams:
+      pull:
+        - engineering
+    topics:
+      - actions
+      - car-file
+      - cid
+      - deploy
+      - github
+      - ipfs-cluster
+      - ipfs
+      - kubo
+      - pinata
+      - storacha
+      - upload
+    visibility: public
+  ipfs-quicklaunch:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    collaborators:
+      push:
+        - web3-bot
+    default_branch: main
+    description: IPFS app launcher browser extension with local pet names, version management, and smart CID discovery
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    teams:
+      pull:
+        - engineering
+    visibility: public
+  ipns-inspector:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    collaborators:
+      push:
+        - web3-bot
+    default_branch: main
+    description: inspect and create IPNS records from the browser
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    teams:
+      pull:
+        - engineering
+    topics:
+      - debug
+      - ipfs
+      - ipns
     visibility: public
   ipshipyard.com:
     advanced_security: false
@@ -440,6 +530,20 @@ repositories:
         - web3-bot
     default_branch: main
     description: Telemetry server receives and logs telemetry from Kubo
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: private
+  unixfs-toolkit:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    default_branch: main
+    description: UnixFS toolkit with cross platform bindings
     has_discussions: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
