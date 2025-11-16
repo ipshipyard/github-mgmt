@@ -77,6 +77,8 @@ repositories:
     collaborators:
       admin:
         - ns4plabs
+      push:
+        - web3-bot
     default_branch: main
     description: A set of reference libraries for building IPFS applications and implementations in Go.
     has_discussions: false
@@ -151,6 +153,9 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     description: A code repository designed to show the best GitHub has to offer.
     has_discussions: false
@@ -300,8 +305,8 @@ repositories:
     has_discussions: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
-    secret_scanning_push_protection: false
-    secret_scanning: false
+    secret_scanning_push_protection: true
+    secret_scanning: true
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     teams:
@@ -332,8 +337,8 @@ repositories:
     has_discussions: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
-    secret_scanning_push_protection: false
-    secret_scanning: false
+    secret_scanning_push_protection: true
+    secret_scanning: true
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     teams:
@@ -352,8 +357,8 @@ repositories:
     has_discussions: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
-    secret_scanning_push_protection: false
-    secret_scanning: false
+    secret_scanning_push_protection: true
+    secret_scanning: true
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     teams:
@@ -484,6 +489,8 @@ repositories:
     collaborators:
       admin:
         - ns4plabs
+      push:
+        - web3-bot
     default_branch: master
     description: An IPFS implementation in Go
     has_discussions: false
@@ -525,6 +532,9 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     description: An experimental set of Python based IPFS libraries
     has_discussions: false
@@ -542,6 +552,8 @@ repositories:
     collaborators:
       admin:
         - ns4plabs
+      push:
+        - web3-bot
     default_branch: main
     description: A specialized IPFS HTTP gateway
     has_discussions: false
@@ -613,6 +625,9 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     description: UnixFS toolkit with cross platform bindings
     has_discussions: false
@@ -640,8 +655,8 @@ repositories:
     has_discussions: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
-    secret_scanning_push_protection: false
-    secret_scanning: false
+    secret_scanning_push_protection: true
+    secret_scanning: true
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     teams:
