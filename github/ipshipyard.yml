@@ -107,6 +107,9 @@ repositories:
     secret_scanning: false
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    teams:
+      push:
+        - engineering
     visibility: private
   cf-gateway-stats:
     advanced_security: false
