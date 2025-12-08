@@ -12,7 +12,7 @@
     "lint:fix": "eslint --fix \"src/**/*.ts\" \"__tests__/**/*.ts\"",
     "test": "TF_EXEC=false TF_LOCK=false TF_WORKING_DIR=__tests__/__resources__/terraform GITHUB_DIR=__tests__/__resources__/github FILES_DIR=__tests__/__resources__/files GITHUB_ORG=default node --import tsx/esm --test --experimental-test-module-mocks \"__tests__/**/*.test.ts\"",
     "test:only": "TF_EXEC=false TF_LOCK=false TF_WORKING_DIR=__tests__/__resources__/terraform GITHUB_DIR=__tests__/__resources__/github FILES_DIR=__tests__/__resources__/files GITHUB_ORG=default node --import tsx/esm --test --test-only --experimental-test-module-mocks \"__tests__/**/*.test.ts\"",
-    "all": "npm run build && npm run format && npm run lint && npm test",
+    "all": "pnpm run build && pnpm run format && pnpm run lint && pnpm test",
     "schema": "ts-json-schema-generator --tsconfig tsconfig.json --path src/yaml/schema.ts --type ConfigSchema --out ../github/.schema.json",
     "main": "node lib/main.js"
   },
@@ -21,10 +21,11 @@
     "@actions/exec": "^1.1.1",
     "@actions/github": "^6.0.0",
     "@octokit/auth-app": "^7.2.0",
+    "@octokit/core": "^6.1.5",
     "@octokit/graphql": "^8.2.2",
-    "@octokit/plugin-paginate-rest": "^11.6.0",
+    "@octokit/plugin-paginate-rest": "^13.1.1",
     "@octokit/plugin-retry": "^7.2.1",
-    "@octokit/plugin-throttling": "^9.6.1",
+    "@octokit/plugin-throttling": "^11.0.1",
     "@octokit/rest": "^21.1.1",
     "class-transformer": "^0.5.1",
     "deep-diff": "^1.0.2",
@@ -44,6 +45,6 @@
     "ts-json-schema-generator": "^2.4.0",
     "tsx": "^4.19.3",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.29.1"
+    "typescript-eslint": "^8.39.0"
   }
 }
