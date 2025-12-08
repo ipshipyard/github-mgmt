@@ -80,7 +80,7 @@ jobs:
       - name: Pull terraform state
         run: |
           echo "{}" > $TF_WORKSPACE.tfstate.json
-          terraform apply -refresh-only
+          terraform refresh
           terraform show -json > $TF_WORKSPACE.tfstate.json
         working-directory: terraform
       - name: Install pnpm
