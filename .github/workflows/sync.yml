@@ -79,6 +79,7 @@ jobs:
         working-directory: terraform
       - name: Pull terraform state
         run: |
+          terraform apply -refresh-only
           terraform show -json > $TF_WORKSPACE.tfstate.json
         working-directory: terraform
       - name: Install pnpm
