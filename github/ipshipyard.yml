@@ -30,6 +30,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: public
+    web_commit_signoff_required: false
   amino-node-validator:
     advanced_security: false
     allow_update_branch: false
@@ -77,8 +78,6 @@ repositories:
     collaborators:
       admin:
         - ns4plabs
-      push:
-        - web3-bot
     default_branch: main
     description: A set of reference libraries for building IPFS applications and implementations in Go.
     has_discussions: false
@@ -149,13 +148,11 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: public
+    web_commit_signoff_required: false
   demo-repository:
     advanced_security: false
     allow_update_branch: false
     archived: false
-    collaborators:
-      push:
-        - web3-bot
     default_branch: main
     description: A code repository designed to show the best GitHub has to offer.
     has_discussions: false
@@ -183,6 +180,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: public
+    web_commit_signoff_required: false
   dnslink-action:
     advanced_security: false
     allow_update_branch: false
@@ -203,6 +201,7 @@ repositories:
       push:
         - engineering
     visibility: public
+    web_commit_signoff_required: false
   drop-in-service-worker:
     advanced_security: false
     allow_update_branch: false
@@ -220,6 +219,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: public
+    web_commit_signoff_required: false
   github-mgmt:
     advanced_security: false
     allow_update_branch: true
@@ -227,6 +227,8 @@ repositories:
     branch_protection:
       master:
         blocks_creations: false
+        force_push_bypassers:
+          - /galargh
         lock_branch: false
     collaborators:
       push:
@@ -240,6 +242,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: public
+    web_commit_signoff_required: false
   go-ds-crdt:
     advanced_security: false
     allow_update_branch: false
@@ -276,6 +279,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: public
+    web_commit_signoff_required: false
   helia-react-components:
     advanced_security: false
     allow_update_branch: false
@@ -293,6 +297,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: public
+    web_commit_signoff_required: false
   ipfs-deploy-action:
     advanced_security: false
     allow_update_branch: false
@@ -305,8 +310,8 @@ repositories:
     has_discussions: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
-    secret_scanning_push_protection: true
-    secret_scanning: true
+    secret_scanning_push_protection: false
+    secret_scanning: false
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     teams:
@@ -325,6 +330,7 @@ repositories:
       - storacha
       - upload
     visibility: public
+    web_commit_signoff_required: false
   ipfs-quicklaunch:
     advanced_security: false
     allow_update_branch: false
@@ -337,14 +343,15 @@ repositories:
     has_discussions: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
-    secret_scanning_push_protection: true
-    secret_scanning: true
+    secret_scanning_push_protection: false
+    secret_scanning: false
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     teams:
       pull:
         - engineering
     visibility: public
+    web_commit_signoff_required: false
   ipns-inspector:
     advanced_security: false
     allow_update_branch: false
@@ -357,8 +364,8 @@ repositories:
     has_discussions: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
-    secret_scanning_push_protection: true
-    secret_scanning: true
+    secret_scanning_push_protection: false
+    secret_scanning: false
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     teams:
@@ -369,6 +376,7 @@ repositories:
       - ipfs
       - ipns
     visibility: public
+    web_commit_signoff_required: false
   ipshipyard.com:
     advanced_security: false
     allow_update_branch: false
@@ -408,6 +416,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: public
+    web_commit_signoff_required: false
   js-libp2p-dev-server:
     advanced_security: false
     allow_update_branch: false
@@ -444,6 +453,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: public
+    web_commit_signoff_required: false
   js-libp2p-inspector:
     advanced_security: false
     allow_update_branch: true
@@ -463,6 +473,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: public
+    web_commit_signoff_required: false
   js-node-datachannel:
     advanced_security: false
     allow_update_branch: true
@@ -482,6 +493,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: public
+    web_commit_signoff_required: false
   kubo:
     advanced_security: false
     allow_update_branch: false
@@ -489,8 +501,6 @@ repositories:
     collaborators:
       admin:
         - ns4plabs
-      push:
-        - web3-bot
     default_branch: master
     description: An IPFS implementation in Go
     has_discussions: false
@@ -528,13 +538,11 @@ repositories:
       - tls
       - wss
     visibility: public
+    web_commit_signoff_required: false
   pilgrim:
     advanced_security: false
     allow_update_branch: false
     archived: false
-    collaborators:
-      push:
-        - web3-bot
     default_branch: main
     description: An experimental set of Python based IPFS libraries
     has_discussions: false
@@ -552,8 +560,6 @@ repositories:
     collaborators:
       admin:
         - ns4plabs
-      push:
-        - web3-bot
     default_branch: main
     description: A specialized IPFS HTTP gateway
     has_discussions: false
@@ -601,6 +607,7 @@ repositories:
       maintain:
         - engineering
     visibility: public
+    web_commit_signoff_required: false
   telemetry-server:
     advanced_security: false
     allow_update_branch: false
@@ -625,9 +632,6 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
-    collaborators:
-      push:
-        - web3-bot
     default_branch: main
     description: UnixFS toolkit with cross platform bindings
     has_discussions: false
@@ -655,14 +659,15 @@ repositories:
     has_discussions: false
     merge_commit_message: PR_TITLE
     merge_commit_title: MERGE_MESSAGE
-    secret_scanning_push_protection: true
-    secret_scanning: true
+    secret_scanning_push_protection: false
+    secret_scanning: false
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     teams:
       pull:
         - engineering
     visibility: public
+    web_commit_signoff_required: false
   waterworks-community:
     advanced_security: false
     allow_update_branch: false
@@ -683,6 +688,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: public
+    web_commit_signoff_required: false
   waterworks-infra:
     advanced_security: false
     allow_update_branch: true
@@ -708,6 +714,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: private
+    web_commit_signoff_required: false
   www-helia-identify:
     advanced_security: false
     allow_update_branch: true
@@ -733,6 +740,7 @@ repositories:
       - helia
       - ipfs
     visibility: public
+    web_commit_signoff_required: false
   www-helia-io:
     advanced_security: false
     allow_update_branch: true
@@ -752,6 +760,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: public
+    web_commit_signoff_required: false
 teams:
   engineering:
     members:
