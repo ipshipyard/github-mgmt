@@ -30,7 +30,6 @@ resource "github_branch_protection" "this" {
       allows_deletions,
       allows_force_pushes,
       enforce_admins,
-      push_restrictions,
       require_conversation_resolution,
       require_signed_commits,
       required_linear_history,
