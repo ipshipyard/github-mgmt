@@ -114,6 +114,7 @@ repositories:
       push:
         - engineering
     visibility: private
+    web_commit_signoff_required: false
   cf-gateway-stats:
     advanced_security: false
     allow_update_branch: false
@@ -168,6 +169,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: private
+    web_commit_signoff_required: false
   deno_helia:
     advanced_security: false
     allow_update_branch: false
@@ -402,6 +404,7 @@ repositories:
     squash_merge_commit_message: PR_BODY
     squash_merge_commit_title: PR_TITLE
     visibility: private
+    web_commit_signoff_required: false
   js-libp2p-auto-tls:
     advanced_security: false
     allow_update_branch: true
@@ -518,6 +521,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: private
+    web_commit_signoff_required: false
   p2p-forge:
     advanced_security: false
     allow_update_branch: false
@@ -563,6 +567,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: private
+    web_commit_signoff_required: false
   rainbow:
     advanced_security: false
     allow_update_branch: false
@@ -657,6 +662,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: private
+    web_commit_signoff_required: false
   vole:
     advanced_security: false
     allow_update_branch: true
