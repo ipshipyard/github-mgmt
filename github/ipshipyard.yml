@@ -604,6 +604,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: private
+    web_commit_signoff_required: false
   roadmaps:
     advanced_security: false
     allow_update_branch: false
