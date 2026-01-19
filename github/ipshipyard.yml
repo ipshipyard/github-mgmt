@@ -322,7 +322,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     teams:
-      pull:
+      push:
         - engineering
     topics:
       - actions
@@ -520,6 +520,9 @@ repositories:
     secret_scanning: false
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    teams:
+      push:
+        - engineering
     visibility: private
     web_commit_signoff_required: false
   p2p-forge:
