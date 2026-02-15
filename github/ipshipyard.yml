@@ -50,6 +50,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: private
+    web_commit_signoff_required: false
   amino-provide-benchmark:
     advanced_security: false
     allow_update_branch: false
@@ -69,6 +70,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: private
+    web_commit_signoff_required: false
   archived-waterworks-infra:
     archived: true
   boxo:
@@ -93,6 +95,7 @@ repositories:
       push:
         - engineering
     visibility: private
+    web_commit_signoff_required: false
   buoy:
     advanced_security: false
     allow_update_branch: false
@@ -134,6 +137,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: private
+    web_commit_signoff_required: false
   conf.ipfs-mainnet.org:
     advanced_security: false
     allow_update_branch: true
@@ -269,6 +273,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: private
+    web_commit_signoff_required: false
   helia-adventure:
     advanced_security: false
     allow_update_branch: false
@@ -359,6 +364,24 @@ repositories:
         - engineering
     visibility: public
     web_commit_signoff_required: false
+  ipnibridge:
+    advanced_security: false
+    allow_update_branch: false
+    archived: false
+    collaborators:
+      admin:
+        - gammazero
+    default_branch: main
+    description: bridge between ipni and other routing systems
+    has_discussions: false
+    merge_commit_message: PR_TITLE
+    merge_commit_title: MERGE_MESSAGE
+    secret_scanning_push_protection: false
+    secret_scanning: false
+    squash_merge_commit_message: COMMIT_MESSAGES
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    visibility: internal
+    web_commit_signoff_required: false
   ipns-inspector:
     advanced_security: false
     allow_update_branch: false
@@ -442,6 +465,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: private
+    web_commit_signoff_required: false
   js-libp2p-http:
     advanced_security: false
     allow_update_branch: false
@@ -590,6 +614,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: private
+    web_commit_signoff_required: false
   roadmaps-private:
     advanced_security: false
     allow_update_branch: false
@@ -649,6 +674,7 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     visibility: private
+    web_commit_signoff_required: false
   unixfs-toolkit:
     advanced_security: false
     allow_update_branch: false
