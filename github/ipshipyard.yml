@@ -717,6 +717,8 @@ repositories:
     teams:
       pull:
         - engineering
+      push:
+        - engineering
     visibility: public
     web_commit_signoff_required: false
   waterworks-community:
