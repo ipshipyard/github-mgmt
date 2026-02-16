@@ -371,6 +371,8 @@ repositories:
     collaborators:
       admin:
         - gammazero
+      push:
+        - web3-bot
     default_branch: main
     description: bridge between ipni and other routing systems
     has_discussions: false
