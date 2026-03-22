@@ -10,7 +10,6 @@ members:
     - achingbrain
     - gammazero
     - guillaumemichel
-    - hsanjuan
     - ns4plabs
     - web3-bot
 repositories:
@@ -101,8 +100,6 @@ repositories:
     allow_update_branch: false
     archived: false
     collaborators:
-      admin:
-        - hsanjuan
       push:
         - web3-bot
     default_branch: master
@@ -259,8 +256,6 @@ repositories:
     allow_update_branch: false
     archived: false
     collaborators:
-      admin:
-        - hsanjuan
       push:
         - web3-bot
     default_branch: master
@@ -382,7 +377,7 @@ repositories:
     secret_scanning: false
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
-    visibility: internal
+    visibility: private
     web_commit_signoff_required: false
   ipns-inspector:
     advanced_security: false
@@ -661,8 +656,6 @@ repositories:
     allow_update_branch: false
     archived: false
     collaborators:
-      admin:
-        - hsanjuan
       push:
         - ns4plabs
         - web3-bot
@@ -755,7 +748,6 @@ repositories:
         - achingbrain
         - gammazero
         - guillaumemichel
-        - hsanjuan
         - web3-bot
     default_branch: master
     description: IPFS Infra As A Service - The central place for gateway and bootstrapper automations.
@@ -825,6 +817,5 @@ teams:
         - achingbrain
         - gammazero
         - guillaumemichel
-        - hsanjuan
         - ns4plabs
     privacy: closed
