@@ -234,6 +234,8 @@ repositories:
     allow_update_branch: false
     archived: false
     collaborators:
+      admin:
+        - achingbrain
       push:
         - web3-bot
     default_branch: main
@@ -293,6 +295,8 @@ repositories:
     allow_update_branch: false
     archived: false
     collaborators:
+      admin:
+        - achingbrain
       push:
         - web3-bot
     default_branch: main
@@ -311,6 +315,8 @@ repositories:
     allow_update_branch: false
     archived: false
     collaborators:
+      admin:
+        - achingbrain
       push:
         - web3-bot
     default_branch: main
