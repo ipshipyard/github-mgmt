@@ -733,7 +733,7 @@ repositories:
     secret_scanning: false
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
-    visibility: private
+    visibility: public
     web_commit_signoff_required: false
   vole:
     advanced_security: false
