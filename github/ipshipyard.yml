@@ -119,6 +119,8 @@ repositories:
     allow_update_branch: false
     archived: false
     collaborators:
+      admin:
+        - guillaumemichel
       push:
         - web3-bot
     default_branch: master
