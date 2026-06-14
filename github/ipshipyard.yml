@@ -156,6 +156,9 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     description: "[PRIVATE] fork to prototype and benchmark native Pulsar integration  (without IPNI bridge)"
     has_discussions: false
@@ -420,7 +423,9 @@ repositories:
     squash_merge_commit_message: COMMIT_MESSAGES
     squash_merge_commit_title: COMMIT_OR_PR_TITLE
     teams:
-      pull:
+      admin:
+        - achingbrain
+      push:
         - engineering
     topics:
       - debug
