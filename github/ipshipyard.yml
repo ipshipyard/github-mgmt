@@ -156,6 +156,9 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     description: "[PRIVATE] fork to prototype and benchmark native Pulsar integration  (without IPNI bridge)"
     has_discussions: false
@@ -248,6 +251,9 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     description: Static notice shown during the scheduled brownout of the ipfs.io and dweb.link gateways, pointing visitors to self-hosting
     has_discussions: false
@@ -706,6 +712,8 @@ repositories:
     collaborators:
       admin:
         - guillaumemichel
+      push:
+        - web3-bot
     default_branch: main
     has_discussions: false
     merge_commit_message: PR_TITLE
