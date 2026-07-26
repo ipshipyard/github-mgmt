@@ -611,28 +611,7 @@ repositories:
     visibility: public
     web_commit_signoff_required: false
   kubo:
-    advanced_security: false
-    allow_update_branch: false
-    archived: false
-    collaborators:
-      admin:
-        - ns4plabs
-      push:
-        - web3-bot
-    default_branch: master
-    description: An IPFS implementation in Go
-    has_discussions: false
-    merge_commit_message: PR_TITLE
-    merge_commit_title: MERGE_MESSAGE
-    secret_scanning_push_protection: false
-    secret_scanning: false
-    squash_merge_commit_message: COMMIT_MESSAGES
-    squash_merge_commit_title: COMMIT_OR_PR_TITLE
-    teams:
-      push:
-        - engineering
-    visibility: private
-    web_commit_signoff_required: false
+    archived: true
   p2p-forge:
     advanced_security: false
     allow_update_branch: false
