@@ -16,6 +16,9 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     has_discussions: false
     merge_commit_message: PR_TITLE
@@ -33,6 +36,8 @@ repositories:
     collaborators:
       admin:
         - guillaumemichel
+      push:
+        - web3-bot
     default_branch: main
     description: Compliance testing tool for live Amino nodes.
     has_discussions: false
@@ -51,6 +56,8 @@ repositories:
     collaborators:
       admin:
         - guillaumemichel
+      push:
+        - web3-bot
     default_branch: main
     description: Benchmarking tool to measure providing performance for the Amino DHT
     has_discussions: false
@@ -72,6 +79,8 @@ repositories:
       admin:
         - cewood
         - ns4plabs
+      push:
+        - web3-bot
     default_branch: master
     has_discussions: false
     merge_commit_message: PR_TITLE
@@ -89,6 +98,8 @@ repositories:
     collaborators:
       admin:
         - ns4plabs
+      push:
+        - web3-bot
     default_branch: main
     description: A set of reference libraries for building IPFS applications and implementations in Go.
     has_discussions: false
@@ -110,6 +121,8 @@ repositories:
     collaborators:
       admin:
         - ns4plabs
+      push:
+        - web3-bot
     default_branch: master
     description: Cloudflare Worker for collecting IPFS gateway stats
     has_discussions: false
@@ -125,6 +138,9 @@ repositories:
     advanced_security: false
     allow_update_branch: true
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     description: AutoConf manifest for IPFS Mainnet maintained by the Shipyard
     has_discussions: false
@@ -140,6 +156,9 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     description: "[PRIVATE] fork to prototype and benchmark native Pulsar integration  (without IPNI bridge)"
     has_discussions: false
@@ -155,6 +174,9 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     description: A code repository designed to show the best GitHub has to offer.
     has_discussions: false
@@ -170,6 +192,9 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     description: Example showing how to use Helia with Deno
     has_discussions: false
@@ -185,6 +210,9 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     description: "GitHub Action to automate setting DNSLink record "
     has_discussions: false
@@ -208,6 +236,8 @@ repositories:
     collaborators:
       admin:
         - lidel
+      push:
+        - web3-bot
     default_branch: main
     description: Static notice shown during the scheduled brownout of the ipfs.io and dweb.link gateways, pointing visitors to self-hosting
     has_discussions: false
@@ -232,6 +262,8 @@ repositories:
     collaborators:
       admin:
         - galargh
+      push:
+        - web3-bot
     default_branch: master
     has_discussions: false
     merge_commit_message: PR_TITLE
@@ -246,6 +278,9 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: master
     description: Private fork of go-ds-crdt
     has_discussions: false
@@ -264,6 +299,8 @@ repositories:
     collaborators:
       admin:
         - achingbrain
+      push:
+        - web3-bot
     default_branch: main
     description: "Learn the building blocks of IPFS with Helia: CIDs, UnixFS, CAR files and content routing."
     has_discussions: false
@@ -282,6 +319,8 @@ repositories:
     collaborators:
       admin:
         - achingbrain
+      push:
+        - web3-bot
     default_branch: main
     description: A monorepo of React providers, hooks, and components for Helia and js-libp2p
     has_discussions: false
@@ -297,6 +336,9 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     description: Official IPFS GitHub Action for deploying static sites (or builds) to IPFS nodes/pinning services with CAR files, and addressing site builds with CIDs
     has_discussions: false
@@ -327,6 +369,9 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     description: IPFS app launcher browser extension with local pet names, version management, and smart CID discovery
     has_discussions: false
@@ -350,6 +395,7 @@ repositories:
         - gammazero
       push:
         - guillaumemichel
+        - web3-bot
     default_branch: main
     description: bridge between ipni and other routing systems
     has_discussions: false
@@ -371,6 +417,8 @@ repositories:
     collaborators:
       admin:
         - achingbrain
+      push:
+        - web3-bot
     default_branch: main
     description: inspect and create IPNS records from the browser
     has_discussions: false
@@ -398,6 +446,7 @@ repositories:
         - cwaring
       push:
         - guillaumemichel
+        - web3-bot
     default_branch: main
     description: Interplanetary Shipyard Website
     has_discussions: false
@@ -416,6 +465,8 @@ repositories:
     collaborators:
       admin:
         - achingbrain
+      push:
+        - web3-bot
     default_branch: main
     description: Cryptographic primitives for Helia and friends
     has_discussions: false
@@ -434,6 +485,8 @@ repositories:
     collaborators:
       admin:
         - achingbrain
+      push:
+        - web3-bot
     default_branch: main
     description: Generate and securely store private keys at rest
     has_discussions: false
@@ -452,6 +505,8 @@ repositories:
     collaborators:
       admin:
         - achingbrain
+      push:
+        - web3-bot
     default_branch: main
     description: Automatically acquire a <peerId>.libp2p.direct TLS certificate
     has_discussions: false
@@ -467,6 +522,9 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     description: Dev server that utilizes js-libp2p in order to automatically host your application locally and publicly, without any centralized services
     has_discussions: false
@@ -485,6 +543,8 @@ repositories:
     collaborators:
       admin:
         - achingbrain
+      push:
+        - web3-bot
     default_branch: main
     description: HTTP on top of libp2p
     has_discussions: false
@@ -503,6 +563,8 @@ repositories:
     collaborators:
       admin:
         - achingbrain
+      push:
+        - web3-bot
     default_branch: main
     description: Inspect a running libp2p node
     has_discussions: false
@@ -521,6 +583,8 @@ repositories:
     collaborators:
       admin:
         - achingbrain
+      push:
+        - web3-bot
     default_branch: master
     description: A fork of node-datachannel with WebRTC-Direct patches applied
     has_discussions: false
@@ -538,6 +602,9 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     description: An Authoritative DNS server for distributing DNS subdomains to libp2p peers
     has_discussions: false
@@ -563,6 +630,9 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     description: An experimental set of Python based IPFS libraries
     has_discussions: false
@@ -578,6 +648,9 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     has_discussions: false
     merge_commit_message: PR_TITLE
@@ -598,6 +671,8 @@ repositories:
     collaborators:
       admin:
         - guillaumemichel
+      push:
+        - web3-bot
     default_branch: main
     has_discussions: false
     merge_commit_message: PR_TITLE
@@ -615,6 +690,8 @@ repositories:
     collaborators:
       admin:
         - guillaumemichel
+      push:
+        - web3-bot
     default_branch: master
     has_discussions: false
     merge_commit_message: PR_TITLE
@@ -635,6 +712,8 @@ repositories:
     collaborators:
       admin:
         - ns4plabs
+      push:
+        - web3-bot
     default_branch: main
     description: A specialized IPFS HTTP gateway
     has_discussions: false
@@ -650,6 +729,9 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     description: A place for private roadmap items and issues for Shipyard
     has_discussions: false
@@ -665,6 +747,9 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     description: A place for high level roadmaps and issues for Shipyard
     has_discussions: true
@@ -686,6 +771,7 @@ repositories:
     collaborators:
       push:
         - ns4plabs
+        - web3-bot
     default_branch: main
     description: Telemetry server receives and logs telemetry from Kubo
     has_discussions: false
@@ -701,6 +787,9 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     description: UnixFS toolkit with cross platform bindings
     has_discussions: false
@@ -716,6 +805,9 @@ repositories:
     advanced_security: false
     allow_update_branch: false
     archived: false
+    collaborators:
+      push:
+        - web3-bot
     default_branch: main
     description: A viem transport that pins Ethereum JSON-RPC reads to a caller-supplied trusted block and verifies state proofs locally before returning results.
     has_discussions: false
@@ -737,6 +829,7 @@ repositories:
         lock_branch: false
     collaborators:
       push:
+        - web3-bot
         - whyrusleeping
     default_branch: main
     description: CLI with a collection of tools for digging around IPFS nodes
@@ -761,6 +854,7 @@ repositories:
         - cewood
       push:
         - ns4plabs
+        - web3-bot
     default_branch: main
     description: Discussion and documentation concerning the operation of the Public Goods for IPFS and Libp2p.
     has_discussions: false
@@ -786,6 +880,7 @@ repositories:
         - achingbrain
         - gammazero
         - guillaumemichel
+        - web3-bot
     default_branch: master
     description: IPFS Infra As A Service - The central place for gateway and bootstrapper automations.
     has_discussions: false
@@ -804,6 +899,8 @@ repositories:
     collaborators:
       admin:
         - achingbrain
+      push:
+        - web3-bot
     default_branch: main
     description: Run identify with a peer with Helia in a browser
     has_discussions: false
@@ -828,6 +925,8 @@ repositories:
     collaborators:
       admin:
         - achingbrain
+      push:
+        - web3-bot
     default_branch: main
     description: The code behind the helia.io website
     has_discussions: false
