@@ -258,6 +258,8 @@ repositories:
           - /galargh
         lock_branch: false
     collaborators:
+      admin:
+        - galargh
       push:
         - web3-bot
     default_branch: master
