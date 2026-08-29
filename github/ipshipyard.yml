@@ -4,10 +4,10 @@ members:
   admin:
     - aschmahmann
     - cewood
-    - galargh
     - lidel
   member:
     - achingbrain
+    - galargh
     - gammazero
     - guillaumemichel
     - ns4plabs
