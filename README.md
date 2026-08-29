@@ -1,3 +1,6 @@
+> [!WARNING]
+> As of 2026-09-01, this repository is no longer maintained. To propose changes to the GitHub configuration, please reach out to the organisation administrators.
+
 <div align="center">
 
 ![Management Banner](https://github.com/pl-strflt/github-mgmt-template/assets/6688074/15b2101a-149a-4556-a1b5-497b50d77813)
